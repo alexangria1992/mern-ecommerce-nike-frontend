@@ -8,8 +8,20 @@ import shoe2 from '../../assets/shoe2.jpg';
 import shoe3 from '../../assets/shoe3.jpg';
 import shoe4 from '../../assets/shoe4.jpg';
 import shoe5 from '../../assets/shoe5.jpg';
+import ReactPlayer from 'react-player';
+import teamCollection from '../../assets/TeamCollection.jpg';
+import dressToImpress from '../../assets/dressToImpress.jpg';
+import mens from '../../assets/mens.jpg';
+import womens from '../../assets/womens.jpg';
+import kids from '../../assets/kids.jpg';
+// import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const [showIcons, setShowIcons] = useState(false);
+  const [showShoes, setShowShoes] = useState(false);
+  const [showClothing, setShowClothing] = useState(false);
+  const [showKids, setShowKids] = useState(false);
+
   const [windowDimension, setWindowDimension] = useState({
     winWidth: window.innerWidth,
     winHeight: window.innerHeight,
@@ -63,8 +75,8 @@ const Header = () => {
             <button className='shop-button mt-12'>Shop All</button>
           </div>
         </div>
-        <div className='second border-2 border-green-400'>
-          <div className='text-left flex justify-between items-center border-2 border-purple-500'>
+        <div className='second '>
+          <div className='text-left flex justify-between items-center '>
             <p className='text-lg px-2 py-7'>Air Max Collection</p>
             <div className='slide-buttons md:flex hidden'>
               <div className='border-2 border-black rounded-full h-5 w-5 m-2'>
@@ -86,6 +98,254 @@ const Header = () => {
                 <p className='text-lg px-2 py-7 '>{shoe.name}</p>
               </div>
             ))}
+          </div>
+        </div>
+        <div className='third  mb-16'>
+          <div className='text-left'>
+            <p className='text-lg px-2 py-7 md:text-[2vw]'>Just In</p>
+            {windowDimension.winWidth > 762 ? (
+              <ReactPlayer
+                url='https://youtu.be/VnE7m8JI7MY'
+                loop
+                playing
+                muted
+                style={{ pointerEvents: 'none' }}
+                width='100%'
+                className='mb-12 '
+                height='100vh'
+              />
+            ) : (
+              <ReactPlayer
+                url='https://youtube.com/shorts/YD0wQxl48ZI'
+                loop
+                playing
+                muted
+                style={{ pointerEvents: 'none' }}
+                width='100%'
+                className='mb-12 '
+                height='65vh'
+              />
+            )}
+            <div className='first-text  md:text-center'>
+              <h1 className='text-bolder mb-5 md:text-bolder-md'>Nike Tech</h1>
+              <p>
+                Engineered to the Exact Specification of Championship Athletes
+              </p>
+              <button className='shop-button my-5'>Shop</button>
+            </div>
+          </div>
+        </div>
+        <div className='md:flex md:justify-center md:items-center'>
+          <div className='fourth text-left'>
+            <h1 className='text-lg mb-4 md:text-[2vw]'>Trending</h1>
+            <div className='md:relative'>
+              <img src={teamCollection} alt='' />
+              <div className='first-text my-5 mx-4 space-y-5 md:absolute bottom-10 left-10'>
+                <h1 className='text-lg'>National Team Collection</h1>
+                <button className='shop-button'>Shop</button>
+              </div>
+            </div>
+          </div>
+          <div className='fifth relative'>
+            <img className='opacity-90' src={dressToImpress} alt='' />
+            <div className='text-first absolute bottom-5 md:bottom-48 left-5 space-y-5'>
+              <h1 className='text-white'>Dress to Impress</h1>
+              <button className='shop-button-white'>Shop</button>
+            </div>
+          </div>
+        </div>
+
+        <div className='sixth text-left md:text-center'>
+          <h1 className='text-lg md:text-[2vw] mt-10 mb-4 text-left'>
+            The Latest
+          </h1>
+          {windowDimension.winWidth > 762 ? (
+            <ReactPlayer
+              url='https://youtu.be/O-JXUhhIRHU'
+              loop
+              playing
+              muted
+              style={{ pointerEvents: 'none' }}
+              width='100%'
+              className='mb-12 '
+              height='80vh'
+            />
+          ) : (
+            <ReactPlayer
+              url='https://youtube.com/shorts/V5Vfjd1am4E'
+              loop
+              playing
+              muted
+              style={{ pointerEvents: 'none' }}
+              width='100%'
+              className='mb-12 '
+              height='65vh'
+            />
+          )}
+          <p>Nike App Early Access</p>
+          <h1 className='text-bolder md:text-bolder-md'>Air Jordan XXXVIII </h1>
+          <h1 className='text-bolder md:text-bolder-md'>"Fundamental"</h1>
+          <div className='text-center flex justify-start md:justify-center w-full'>
+            <p className='md:max-w-[50%]'>
+              Enter the next chapter of the Air Jordan Legacy . Build to run
+              floor , our "Fundamental" white,black and red colours way keeps
+              the newest AJ true to our Jordan Brand DNA
+            </p>
+          </div>
+          <button className='shop-button my-5'>Shop</button>
+        </div>
+
+        <div className='seventh text-left'>
+          <h3 className='text-lg my-5 md:text-[2vw]'>Don't Miss</h3>
+          {windowDimension.winWidth > 768 ? (
+            <ReactPlayer
+              url='https://youtu.be/E2-efiAcS3w'
+              loop
+              playing
+              muted
+              style={{ pointerEvents: 'none' }}
+              width='100%'
+              className='mb-12 '
+              height='80vh'
+            />
+          ) : (
+            <ReactPlayer
+              url='https://youtube.com/shorts/_Df7NxfmvQA'
+              loop
+              playing
+              muted
+              style={{ pointerEvents: 'none' }}
+              width='100%'
+              className='mb-12 '
+              height='65vh'
+            />
+          )}
+          <div className='firstText md:text-center'>
+            <p>Jordan Apparel</p>
+            <h1 className='text-bolder md:text-bolder-md'>
+              Shades of <br className='md:hidden'></br> blue
+            </h1>
+            <p className='py-8'>
+              Keep your looks cool in wover pants , warm up jackets and fleece
+              pieces
+            </p>
+            <button className='shop-button'>Shop</button>
+          </div>
+        </div>
+        <div className='eight text-left py-12 '>
+          <p className='text-lg my-6'>The Essentials</p>
+          <div className='eight-images sm:flex'>
+            <div className='first-img relative my-3 sm:mx-2'>
+              <img src={mens} alt='' />
+              <button className='shop-button-white absolute bottom-5 left-5'>
+                {' '}
+                Men's
+              </button>
+            </div>
+            <div className='first-img relative my-3 sm:mx-2'>
+              <img src={womens} alt='' />
+              <button className='shop-button-white absolute bottom-5 left-5'>
+                {' '}
+                Women's
+              </button>
+            </div>
+            <div className='first-img relative my-3 sm:mx-2'>
+              <img src={kids} alt='' />
+              <button className='shop-button-white absolute bottom-5 left-5'>
+                {' '}
+                Kid's
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className='nine  text-left py-12 sm:flex sm:justify-around'>
+          <div className='firstOption my-4 '>
+            <h2
+              className='text-lg font-Oswald '
+              onClick={() => setShowIcons((show) => !show)}
+            >
+              Icons
+            </h2>
+            <div
+              className={`firstOptions my-3 mx-6 space-y-2 opacity-50  ${
+                showIcons ? 'block' : 'hidden'
+              } sm:block sm:text-s sm:mx-0`}
+            >
+              <p className='cursor-pointer'>Air Force 1</p>
+              <p className='cursor-pointer'>Huarache</p>
+              <p className='cursor-pointer'>Air Max 90</p>
+              <p className='cursor-pointer'>Air Max 95</p>
+              <p className='cursor-pointer'>Air Max 97</p>
+              <p className='cursor-pointer'>Air Max 270</p>
+              <p className='cursor-pointer'>Air Max 720</p>
+              <p className='cursor-pointer'>All Air Max</p>
+              <p className='cursor-pointer'>Vapormax</p>
+            </div>
+          </div>
+          <div className='secondOption my-4'>
+            <h2
+              className='text-lg font-Oswald '
+              onClick={() => setShowShoes((show) => !show)}
+            >
+              Shoes
+            </h2>
+            <div
+              className={`secondOptions my-3 mx-6 space-y-2 opacity-50 ${
+                showShoes ? 'block' : 'hidden'
+              } sm:block sm:text-s sm:mx-0`}
+            >
+              <p className='cursor-pointer'>All Shoes</p>
+              <p className='cursor-pointer'>Custom Shoes</p>
+              <p className='cursor-pointer'>Jordan Shoes</p>
+              <p className='cursor-pointer'>Running Shoes</p>
+              <p className='cursor-pointer'>Basketball Shoes</p>
+              <p className='cursor-pointer'>Football Shoes</p>
+              <p className='cursor-pointer'>Gym and Training Shoes</p>
+              <p className='cursor-pointer'>Lifestyle Shoes</p>
+            </div>
+          </div>
+          <div className='thirdOption my-4'>
+            <h2
+              className='text-lg font-Oswald '
+              onClick={() => setShowClothing((show) => !show)}
+            >
+              Clothing
+            </h2>
+            <div
+              className={`thirdOptions my-3 mx-6 space-y-2 opacity-50 ${
+                showClothing ? 'block' : 'hidden'
+              } sm:block sm:text-s sm:mx-0`}
+            >
+              <p className='cursor-pointer'>All Clothing</p>
+              <p className='cursor-pointer'>Modest Wear</p>
+              <p className='cursor-pointer'>Hoodies & Pullovers</p>
+              <p className='cursor-pointer'>Shirts & Tops</p>
+              <p className='cursor-pointer'>Jackets</p>
+              <p className='cursor-pointer'>Compression & Nike Pro</p>
+              <p className='cursor-pointer'>Trousers & Leggings</p>
+              <p className='cursor-pointer'>Shorts</p>
+            </div>
+          </div>
+          <div className='fourthOption my-4'>
+            <h2
+              className='text-lg font-Oswald '
+              onClick={() => setShowKids((show) => !show)}
+            >
+              Kids'
+            </h2>
+            <div
+              className={`fourthOptions my-3 mx-6 space-y-2 opacity-50 ${
+                showKids ? 'block' : 'hidden'
+              } sm:block sm:text-s sm:mx-0`}
+            >
+              <p className='cursor-pointer'>Infant & Toddler Shoes</p>
+              <p className='cursor-pointer'>Kids' Shoes</p>
+              <p className='cursor-pointer'>Kids' Basketball Shoes</p>
+              <p className='cursor-pointer'>Kids' Running Shoes</p>
+              <p className='cursor-pointer'>Kids' Clothing</p>
+              <p className='cursor-pointer'>Kids' Backpacks</p>
+              <p className='cursor-pointer'>Kids' Socks</p>
+            </div>
           </div>
         </div>
       </div>
